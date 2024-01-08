@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component, inject, Injectable} from '@angular/core';
+import {TelegramService} from "../services/telegram.service";
 
 @Component({
   selector: 'app-shop',
@@ -7,5 +8,12 @@ import { Component } from '@angular/core';
   template: `<h1>main shop</h1>`
 })
 export class ShopComponent {
+
+  telegram = inject(TelegramService);
+
+  constructor() {
+    this.telegram.MainButton.show()
+}
+
 
 }
