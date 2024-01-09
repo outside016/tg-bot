@@ -1,5 +1,6 @@
-import {Component, inject, Injectable} from '@angular/core';
+import {Component, inject} from '@angular/core';
 import {TelegramService} from "../services/telegram.service";
+import {ProductsService} from "../services/products.service";
 
 @Component({
   selector: 'app-shop',
@@ -9,6 +10,7 @@ import {TelegramService} from "../services/telegram.service";
 })
 export class ShopComponent {
 
+
   telegram = inject(TelegramService);
 
   constructor() {
@@ -16,4 +18,5 @@ export class ShopComponent {
 }
 
 
+  protected readonly ProductsService = ProductsService;
 }
