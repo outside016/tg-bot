@@ -28,7 +28,7 @@ export interface IProduct {
   image: string;
 }
 
-export function addDomainToLinkAndImage(product: IProduct){
+function addDomainToLinkAndImage(product: IProduct){
   return{
     ... product,
     image: domainIMG + product.image,
