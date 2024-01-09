@@ -28,7 +28,7 @@ export interface IProduct {
   image: string;
 }
 
-function addDomainToLinkAndImage(product: IProduct){
+export function addDomainToLinkAndImage(product: IProduct){
   return{
     ... product,
     image: domainIMG + product.image,
@@ -36,7 +36,7 @@ function addDomainToLinkAndImage(product: IProduct){
   };
 }
 
-export const products: IProduct[] = [
+const products: IProduct[] = [
   {
     id: '1',
     type: ProductType.Sneakers,
@@ -89,6 +89,11 @@ export const products: IProduct[] = [
   providedIn: 'root'
 })
 export class ProductsService {
+  readonly products: IProduct[] = products.map(addDomainToLinkAndImage);
 
-  constructor() { }
+  getById(id:string){
+    return this.products.find((p)=> p.id === id);
+  }
+
+
 }
