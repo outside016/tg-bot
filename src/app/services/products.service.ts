@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 
 const domain = 'https://nuw.store/catalog/'
+const domainIMG = 'https://nuw.store/upload/iblock/'
 
 export enum ProductType{
   Sneakers = 'sneakers',
@@ -30,7 +31,7 @@ export interface IProduct {
 function addDomainToLinkAndImage(product: IProduct){
   return{
     ... product,
-    image: domain + product.image,
+    image: domainIMG + product.image,
     link: domain + product.link,
   };
 }
@@ -43,7 +44,7 @@ export const products: IProduct[] = [
     name: 'Кроссовки ACUMIK',
     price: '34 990',
     link: 'krossovki/krossovki_acumik_3-color-temno-sinij/',
-    image: 'https://nuw.store/upload/iblock/d4c/j4v2xkghoqtjg7p2z804qn47al3gcv98.jpg'
+    image: 'd4c/j4v2xkghoqtjg7p2z804qn47al3gcv98.jpg'
   },
   {
     id: '2',
@@ -52,7 +53,7 @@ export const products: IProduct[] = [
     name: 'Ботинки ROCCIA VET ANTERMOIA x Diemme',
     price: '60 900',
     link: 'botinki/botinki_roccia_vet_antermoia_x_diemme-color-chernyj/',
-    image: 'https://nuw.store/upload/iblock/3b7/ik0o09s82f4mzj9hnyyg1b53qi1gondd.jpg'
+    image: '3b7/ik0o09s82f4mzj9hnyyg1b53qi1gondd.jpg'
   },
   {
     id: '3',
@@ -61,7 +62,7 @@ export const products: IProduct[] = [
     name: 'Шлепанцы VICTORI ONE SHOWER',
     price: '4 900',
     link: 'shlepantsy/shlepantsy_victori_one_shower-color-chernyj/',
-    image: 'https://nuw.store/upload/iblock/dc2/salpkgghsmvuivpwx8cdl7ofseo1bzy1.jpg'
+    image: 'dc2/salpkgghsmvuivpwx8cdl7ofseo1bzy1.jpg'
   },
   {
     id: '4',
@@ -70,7 +71,7 @@ export const products: IProduct[] = [
     name: 'Клоги Traktori',
     price: '18 130',
     link: 'sandalii/klogi_traktori-color-chernyj/',
-    image: 'https://nuw.store/upload/iblock/50e/q5m94q8q019nlbw33ek6agfxcd2huccm.jpg'
+    image: '50e/q5m94q8q019nlbw33ek6agfxcd2huccm.jpg'
   },
   {
     id: '5',
@@ -79,7 +80,7 @@ export const products: IProduct[] = [
     name: 'Кроссовки Wave Prophecy Ls',
     price: '29 990',
     link: 'krossovki/krossovki_wave_prophecy_ls_3-color-chernyj/',
-    image: 'https://nuw.store/upload/iblock/31b/dt0nlo7wwiyj0u6dluoh0pbt36n1mfhf.jpg'
+    image: '31b/dt0nlo7wwiyj0u6dluoh0pbt36n1mfhf.jpg'
   },
 
 ]
