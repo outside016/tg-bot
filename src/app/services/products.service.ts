@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import {group} from "@angular/animations";
 
 const domain = 'https://nuw.store/catalog/'
 const domainIMG = 'https://nuw.store/upload/iblock/'
@@ -95,5 +96,13 @@ export class ProductsService {
     return this.products.find((p)=> p.id === id);
   }
 
-
+  get byGroup() {
+    return this.products.reduce((group, prod) => {
+      if(!group[prod.type]){
+        group[prod.type] = [];
+      }
+      group[prod.type].push(prod);
+      return group;
+    }, {})
+  }
 }
