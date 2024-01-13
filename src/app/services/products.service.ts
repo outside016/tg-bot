@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import {group} from "@angular/animations";
 
 const domain = 'https://nuw.store/catalog/'
 const domainIMG = 'https://nuw.store/upload/iblock/'
@@ -8,7 +7,7 @@ export enum ProductType{
   Sneakers = 'sneakers',
   Boots = 'boots',
   Sandals = 'sandals',
-  Slates = 'Slates',
+  Slates = 'slates',
 }
 
 export enum ProductBrand{
@@ -103,6 +102,6 @@ export class ProductsService {
       }
       group[prod.type].push(prod);
       return group;
-    }, {})
+    }, {});
   }
 }
